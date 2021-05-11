@@ -1,12 +1,12 @@
-require("./bootstrap");
+require('./bootstrap')
 
-import { createApp, h } from "vue";
-import { App, plugin } from "@inertiajs/inertia-vue3";
-import { InertiaProgress } from "@inertiajs/progress";
+import { createApp, h } from 'vue'
+import { App, plugin } from '@inertiajs/inertia-vue3'
+import { InertiaProgress } from '@inertiajs/progress'
 
-InertiaProgress.init();
+InertiaProgress.init()
 
-const el = document.getElementById("app");
+const el = document.getElementById('app')
 
 createApp({
   render: () =>
@@ -16,4 +16,5 @@ createApp({
     }),
 })
   .use(plugin)
-  .mount(el);
+  .mixin({ methods: { route: window.route } })
+  .mount(el)
