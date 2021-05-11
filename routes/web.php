@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StateController;
 
 use Inertia\Inertia;
 
@@ -15,6 +16,4 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-  return Inertia::render('Dashboard', ['title' => 'Barber Shoper']);
-});
+Route::get('/', [StateController::class, 'index'])->name('dashboard');
