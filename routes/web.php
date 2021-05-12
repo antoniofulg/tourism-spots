@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StateController;
 
-use Inertia\Inertia;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
