@@ -17,5 +17,17 @@ mix.js("resources/js/app.js", "public/js")
     .postCss("resources/css/app.css", "public/css", [
         //
     ])
+    .webpackConfig({
+      module: {
+        rules: [
+          {
+            enforce: 'pre',
+            test: /\.(js|vue)$/,
+            loader: 'eslint-loader',
+            exclude: /node_modules/
+          }
+        ]
+      }
+    })
     .tailwind()
     .vue({ version: 3 });
