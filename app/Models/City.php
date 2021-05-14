@@ -11,6 +11,8 @@ class City extends Model
 {
   use HasFactory;
 
+  protected $appends = ['tourist_spots_count'];
+
   /**
    * The attributes that are mass assignable.
    *
@@ -31,7 +33,7 @@ class City extends Model
     return $this->belongsTo(State::class);
   }
 
-  public function getTouristSpotsAttribute() {
+  public function getTouristSpotsCountAttribute() {
     return $this->touristSpots()->get()->count();
   }
 
